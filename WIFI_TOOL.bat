@@ -30,7 +30,7 @@ echo                                    \_____________)
 
 echo 0) README
 echo 1) Necesito Configurar todo (se requiere tu dispositivo conectado por USB)
-echo 2) Ya tengo todo configurado, ¡Solo Conectar!
+echo 2) Ya tengo todo configurado. Solo Conectar!
 echo 9) Salir
 @echo.
 
@@ -82,9 +82,16 @@ echo.
 	echo $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 	@echo.
 
-	echo Esta herramienta esta destinada para conectar tu telefono Android
-	echo en modo depurador, por via wifi.
-	echo Util para vincular tu dispositivo rapidamente con Android Studio.
+	echo - - - - -ANTES QUE NADA, RECUERDA GUARDAR LA IP DE TU DISPOSITIVO EN "ip.txt"- - - - -
+	@echo.
+	echo Esta herramienta esta destinada para conectar tu telefono Android en modo depurador,
+	echo por via wifi. Util para vincular rapidamente con Android Studio.
+	@echo.
+	echo Si ya aplicaste la opcion 1 anteriormente, solo necesitas usar la 2 (al menos que hayas
+	echo reiniciado tu telefono Android).
+	@echo.
+	echo Para averiguar tu IP podes usar herramientas como Fing o Nmap. Tranquilo fiera,
+	echo nadie intenta hackearte.
 echo.
 pause
 goto:inicio

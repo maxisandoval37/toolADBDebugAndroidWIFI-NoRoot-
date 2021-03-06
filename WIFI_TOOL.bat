@@ -30,8 +30,8 @@ echo                                    \_____________)
 
 echo 0) README
 echo 1) Necesito Configurar todo (se requiere tu dispositivo conectado por USB)
-echo 2) Ya tengo todo configurado, solo conectar!
-echo 9) Vendo todo, me voy a la mierda
+echo 2) Ya tengo todo configurado, ¡Solo Conectar!
+echo 9) Salir
 @echo.
 
 set/p opcion= Ingresa una opcion: 
@@ -40,6 +40,17 @@ if %opcion%==1 goto op1
 if %opcion%==2 goto op2
 if %opcion%==9 goto salir
 echo.
+
+::Setear IP del dispositivo
+setlocal enabledelayedexpansion
+
+set ipDispositivo=0
+ 
+for /f "tokens=*" %%h in (ip.txt) do (
+    set ipDispositivo=%%h
+)
+pause
+
 
 ::Mensaje de error, opción incorrecta
 echo."%opcion%" no es una opcion valida, por favor intente de nuevo.
@@ -93,7 +104,7 @@ goto:inicio
 echo.
 	cd C:\Users\MX37S\AppData\Local\Android\Sdk\platform-tools
 	adb tcpip 5555
-	adb connect 192.168.0.X:5555
+	adb connect !ipDispositivo!
 echo.
 pause
 goto:inicio
@@ -101,7 +112,7 @@ goto:inicio
 :op2
 echo.
 	cd C:\Users\MX37S\AppData\Local\Android\Sdk\platform-tools
-	adb connect 192.168.0.X:5555
+	adb connect !ipDispositivo!
 echo.
 pause
 goto:inicio

@@ -41,17 +41,6 @@ if %opcion%==2 goto op2
 if %opcion%==9 goto salir
 echo.
 
-::Setear IP del dispositivo
-setlocal enabledelayedexpansion
-
-set ipDispositivo=0
- 
-for /f "tokens=*" %%h in (ip.txt) do (
-    set ipDispositivo=%%h
-)
-pause
-
-
 ::Mensaje de error, opción incorrecta
 echo."%opcion%" no es una opcion valida, por favor intente de nuevo.
 echo.
@@ -102,6 +91,14 @@ goto:inicio
 
 :op1
 echo.
+	::Setear IP del dispositivo
+	setlocal enabledelayedexpansion
+	set ipDispositivo=0
+ 
+	for /f "tokens=*" %%h in (ip.txt) do (
+	    set ipDispositivo=%%h
+	)
+
 	cd C:\Users\MX37S\AppData\Local\Android\Sdk\platform-tools
 	adb tcpip 5555
 	adb connect !ipDispositivo!
@@ -111,6 +108,14 @@ goto:inicio
 
 :op2
 echo.
+	::Setear IP del dispositivo
+	setlocal enabledelayedexpansion
+	set ipDispositivo=0
+ 
+	for /f "tokens=*" %%h in (ip.txt) do (
+	    set ipDispositivo=%%h
+	)
+
 	cd C:\Users\MX37S\AppData\Local\Android\Sdk\platform-tools
 	adb connect !ipDispositivo!
 echo.

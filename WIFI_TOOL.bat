@@ -29,7 +29,7 @@ echo                                    \_____________)
 @echo.
 
 echo 0) README
-echo 1) Necesito Configurar todo (se requiere tu dispositivo conectado por USB)
+echo 1) Configurar todo y Conectar (se requiere tu dispositivo conectado por USB)
 echo 2) Ya tengo todo configurado. Solo Conectar!
 echo 9) Salir
 @echo.
@@ -98,15 +98,20 @@ goto:inicio
 
 :op1
 echo.
-	::Setear IP del dispositivo
+	::Setear datos
 	setlocal enabledelayedexpansion
 	set ipDispositivo=0
+	set user=""
  
 	for /f "tokens=*" %%h in (ip.txt) do (
 	    set ipDispositivo=%%h
 	)
 
-	cd C:\Users\MX37S\AppData\Local\Android\Sdk\platform-tools
+	for /f "tokens=*" %%h in (user.txt) do (
+	    set user=%%h
+	)
+
+	cd C:\Users\!user!\AppData\Local\Android\Sdk\platform-tools
 	adb tcpip 5555
 	adb connect !ipDispositivo!
 echo.
@@ -115,15 +120,20 @@ goto:inicio
 
 :op2
 echo.
-	::Setear IP del dispositivo
+	::Setear datos
 	setlocal enabledelayedexpansion
 	set ipDispositivo=0
+	set user=""
  
 	for /f "tokens=*" %%h in (ip.txt) do (
 	    set ipDispositivo=%%h
 	)
 
-	cd C:\Users\MX37S\AppData\Local\Android\Sdk\platform-tools
+	for /f "tokens=*" %%h in (user.txt) do (
+	    set user=%%h
+	)
+
+	cd C:\Users\!user!\AppData\Local\Android\Sdk\platform-tools
 	adb connect !ipDispositivo!
 echo.
 pause

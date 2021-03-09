@@ -31,6 +31,7 @@ echo                                    \_____________)
 echo 0) README
 echo 1) Configurar todo y Conectar (se requiere tu dispositivo conectado por USB)
 echo 2) Ya tengo todo configurado. Solo Conectar!
+echo 3) Desconectar mi Dispositivo
 echo 9) Salir
 @echo.
 
@@ -38,6 +39,7 @@ set/p opcion= Ingresa una opcion:
 if %opcion%==0 goto op0
 if %opcion%==1 goto op1
 if %opcion%==2 goto op2
+if %opcion%==3 goto op3
 if %opcion%==9 goto salir
 echo.
 
@@ -135,6 +137,27 @@ echo.
 
 	cd C:\Users\!user!\AppData\Local\Android\Sdk\platform-tools
 	adb connect !ipDispositivo!
+echo.
+pause
+goto:inicio
+
+:op3
+echo.
+	::Setear datos
+	setlocal enabledelayedexpansion
+	set ipDispositivo=0
+	set user=""
+ 
+	for /f "tokens=*" %%h in (ip.txt) do (
+	    set ipDispositivo=%%h
+	)
+
+	for /f "tokens=*" %%h in (user.txt) do (
+	    set user=%%h
+	)
+
+	cd C:\Users\!user!\AppData\Local\Android\Sdk\platform-tools
+	adb disconnect !ipDispositivo!
 echo.
 pause
 goto:inicio

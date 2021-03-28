@@ -1,7 +1,7 @@
 # toolDepurarAndroidWIFI
 
-![1](https://media.taringa.net/knn/fit:550/Z3M6Ly9rbjMvMmYzMDdlMjE0NjUzYzEwMGY4MjRiMDM5NzFiNzBhOGEucG5n)
+![1](https://raw.githubusercontent.com/maxisandoval37/toolADBDebugAndroidWIFI-NoRoot-/imgs/1.PNG)
 
-![2](https://media.taringa.net/knn/fit:550/Z3M6Ly9rbjMvNzhjZjY4YmFkZTkxZThmYzA4YzZhNTVmNzU3NzQ5MjUucG5n)
+![2](https://raw.githubusercontent.com/maxisandoval37/toolADBDebugAndroidWIFI-NoRoot-/imgs/2.PNG)
 
-![3](https://media.taringa.net/knn/fit:550/Z3M6Ly9rbjMvZmE2MjU2MTdiMDk5Zjk4ODY3MThmOGYwNjNmYzFmYzcucG5n)
+![3](https://raw.githubusercontent.com/maxisandoval37/toolADBDebugAndroidWIFI-NoRoot-/imgs/3.PNG)
